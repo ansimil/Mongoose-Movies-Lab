@@ -1,0 +1,26 @@
+<h1>Movie details</h1>
+
+{{#with movies}}
+
+<h3>Title: {{title}}</h3>
+<h3>Genre: {{genre}}</h3>
+<h3>Plot: {{plot}}</h3>
+
+<h2>Cast:</h2>
+{{#each this.cast}}
+<h3>Name: {{name}}</h3>
+<h3>Occupation: {{occupation}}</h3>
+<h3>Catch Phrase: {{catchPhrase}}</h3>
+{{/each}}
+
+<form action="/movies/{{_id}}/delete" method="POST">
+<button type="submit">Delete Movie</button>
+</form>
+
+<form action="/movies/{{_id}}/edit" method="GET">
+<button type="submit">Edit Movie</button>
+</form>
+
+{{!-- {{!<a href="/celebrities/{{_id}}/edit">Edit celebrity info</a> --}}
+
+{{/with}}
